@@ -1,0 +1,22 @@
+{
+  "name": "snake-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JGracia98/Snake-Game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JGracia98/Snake-Game/issues"
+  },
+  "homepage": "https://github.com/JGracia98/Snake-Game#readme",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
