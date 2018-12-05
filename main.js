@@ -87,10 +87,12 @@
 
     if (didEatFood) {
       // Increase score
-      score += 1;
+      score += 3;
       // Display score on screen
       document.getElementById('score').innerHTML = score;
       // Generate new food location
+      snake.unshift(head);
+      snake.unshift(head);
       createFood();
     } else {
       // Remove the last part of snake body
