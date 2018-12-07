@@ -1,11 +1,11 @@
 
-  const GAME_SPEED = 50;
-  const CANVAS_BORDER_COLOUR = 'black';
-  const CANVAS_BACKGROUND_COLOUR = "lightgoldenrodyellow";
-  const SNAKE_COLOUR = 'seagreen';
-  const SNAKE_BORDER_COLOUR = 'white';
-  const FOOD_COLOUR = 'red';
-  const FOOD_BORDER_COLOUR = 'darkred';
+  const gameSpeed = 50;
+  const canvasBorderColor = 'black';
+  const canvasBackgroundColor = "lightgoldenrodyellow";
+  const snakeColor = 'seagreen';
+  const snakeBorderColor = 'white';
+  const foodColor = 'red';
+  const foodBorderColor = 'darkred';
   let snake = [
     {x: 150, y: 150},
     {x: 140, y: 150},
@@ -48,17 +48,17 @@
       drawSnake();
       // Call game again
       main();
-    }, GAME_SPEED)
+    }, gameSpeed)
   }
   /**
-   * Change the background colour of the canvas to CANVAS_BACKGROUND_COLOUR and
+   * Change the background colour of the canvas to canvasBackgroundColor and
    * draw a border around it
    */
   function clearCanvas() {
     //  Select the colour to fill the drawing
-    ctx.fillStyle = CANVAS_BACKGROUND_COLOUR;
+    ctx.fillStyle = canvasBackgroundColor;
     //  Select the colour for the border of the canvas
-    ctx.strokestyle = CANVAS_BORDER_COLOUR;
+    ctx.strokestyle = canvasBorderColor;
     // Draw a "filled" rectangle to cover the entire canvas
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     // Draw a "border" around the entire canvas
@@ -68,8 +68,8 @@
    * Draw the food on the canvas
    */
   function drawFood() {
-    ctx.fillStyle = FOOD_COLOUR;
-    ctx.strokestyle = FOOD_BORDER_COLOUR;
+    ctx.fillStyle = foodColor;
+    ctx.strokestyle = foodBorderColor;
     ctx.fillRect(foodX, foodY, 10, 10);
     ctx.strokeRect(foodX, foodY, 10, 10);
   }
@@ -149,9 +149,9 @@
    */
   function drawSnakePart(snakePart) {
     // Set the colour of the snake part
-    ctx.fillStyle = SNAKE_COLOUR;
+    ctx.fillStyle = snakeColor;
     // Set the border colour of the snake part
-    ctx.strokestyle = SNAKE_BORDER_COLOUR;
+    ctx.strokestyle = snakeBorderColor;
     // Draw a "filled" rectangle to represent the snake part at the coordinates
     // the part is located
     ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
@@ -167,10 +167,14 @@
    * @param { object } event - The keydown event
    */
   function changeDirection(event) {
-    const LEFT_KEY = 37;
-    const RIGHT_KEY = 39;
-    const UP_KEY = 38;
-    const DOWN_KEY = 40;
+    const leftArrow = 37;
+    const rightArrow = 39;
+    const upArrow = 38;
+    const downArrow = 40;
+    const leftKeyAlt = 65;
+    const rightKeyAlt = 68;
+    const upKeyAlt = 87;
+    const downKeyAlt = 83;
     /**
      * Prevent the snake from reversing
      * Example scenario:
@@ -185,25 +189,46 @@
     const goingDown = dy === 10;
     const goingRight = dx === 10;
     const goingLeft = dx === -10;
-    if (keyPressed === LEFT_KEY && !goingRight) {
+    if (keyPressed === leftArrow && !goingRight) {
       dx = -10;
       dy = 0;
     }
 
-    if (keyPressed === UP_KEY && !goingDown) {
+    if (keyPressed === upArrow && !goingDown) {
       dx = 0;
       dy = -10;
     }
 
-    if (keyPressed === RIGHT_KEY && !goingLeft) {
+    if (keyPressed === rightArrow && !goingLeft) {
       dx = 10;
       dy = 0;
     }
 
-    if (keyPressed === DOWN_KEY && !goingUp) {
+    if (keyPressed === downArrow && !goingUp) {
       dx = 0;
       dy = 10;
     }
+
+    if (keyPressed === leftKeyAlt && !goingRight) {
+      dx = -10;
+      dy = 0;
+    }
+
+    if (keyPressed === upKeyAlt && !goingDown) {
+      dx = 0;
+      dy = -10;
+    }
+
+    if (keyPressed === rightKeyAlt && !goingLeft) {
+      dx = 10;
+      dy = 0;
+    }
+
+    if (keyPressed === downKeyAlt && !goingUp) {
+      dx = 0;
+      dy = 10;
+    }
+
   }
  // stops the arrow keys and spacebar from moving the browser window
  window.addEventListener("keydown", function(stop) {
