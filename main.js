@@ -1,4 +1,7 @@
-
+const resetGame = () => {
+  window.location.reload();
+}
+const startGame = () => {
   const gameSpeed = 50;
   const canvasBorderColor = 'black';
   const canvasBackgroundColor = "lightgoldenrodyellow";
@@ -228,8 +231,8 @@
       dx = 0;
       dy = 10;
     }
-
   }
+};
  // stops the arrow keys and spacebar from moving the browser window
  window.addEventListener("keydown", function(stop) {
      // space and arrow keys
