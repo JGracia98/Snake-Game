@@ -4,3 +4,20 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.game-buttons {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5em;
+  padding: 1rem;
+}
+
+ h1 {
+  display: flex;
+  font-family: monospace;
+  font-size: 5em;
+  left: 50%;
+  text-align: center;
+  top: 80%;
+  position: absolute;
+}
