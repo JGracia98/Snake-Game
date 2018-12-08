@@ -1,3 +1,7 @@
+html {
+  background-color: lightslategrey;
+}
+
 #canvas {
   position: absolute;
   top: 50%;
@@ -12,12 +16,22 @@
   padding: 1rem;
 }
 
- h1 {
+ div {
   display: flex;
   font-family: monospace;
   font-size: 5em;
+  font-weight: bold;
   left: 50%;
   text-align: center;
   top: 80%;
   position: absolute;
+}
+
+h1 {
+  text-align: center;
+  width: 25%;
+  margin: 0 auto;
+  color: lightgoldenrodyellow;
+  text-shadow: 2px 2px black;
+  font-size: 37px;
 }
