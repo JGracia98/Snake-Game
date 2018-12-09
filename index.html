@@ -1,17 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Snake Game</title>
 
-    <link rel="stylesheet" href="styles.css" type="text/css">
-  </head>
-  <body>
-    <h1>Snake Game</h1>
-      <div id="score">3</div>
-      <canvas id="canvas" width="1000" height="600"></canvas>
-      <button class="game-buttons" type="submit" onclick="resetGame()">Reset Game</button>
-      <button class="game-buttons" type="submit" onclick="startGame()">Start Game</button>
-   <script src="main.js" type="text/javascript"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <title>Snake Game</title>
+
+  <link rel="stylesheet" href="styles.css" type="text/css">
+</head>
+
+<body>
+  <h1>Snake Game</h1>
+  <div class="settings">
+    <button class="game-buttons" type="submit" onclick="resetGame()">Reset Game</button>
+    <button class="game-buttons" type="submit" onclick="startGame()">Start Game</button>
+      <form action="">
+        <fieldset>
+          <select id="diff" onchange="changediff()">
+            <option value="70">Easy</option>
+            <option value="50">Normal</option>
+            <option value="30">Hard</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+  <div id="length" class="score">Length: </div><div id="score" class="score">3</div>
+  <canvas id="canvas" width="1000" height="600"></canvas>
+
+  <script src="main.js" type="text/javascript"></script>
+</body>
+
 </html>

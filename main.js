@@ -1,8 +1,12 @@
 const resetGame = () => {
   window.location.reload();
 }
+const changediff = () => {
+  var difficulty = document.getElementById("diff").value;
+  return difficulty
+  }
 const startGame = () => {
-  const gameSpeed = 50;
+  let gameSpeed = changediff();
   const canvasBorderColor = 'black';
   const canvasBackgroundColor = "lightgoldenrodyellow";
   const snakeColor = 'seagreen';
